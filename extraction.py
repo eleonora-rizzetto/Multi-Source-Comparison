@@ -18,3 +18,11 @@ def extract_facts(text):
             facts.append(s)
 
     return facts
+
+
+def extract_all_facts(articles):
+    all_facts = []
+    for article in articles:
+        facts = extract_facts(article)
+        all_facts.append(facts)
+    return all_facts

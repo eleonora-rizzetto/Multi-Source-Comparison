@@ -1,4 +1,4 @@
-from extraction import extract_facts
+from extraction import extract_facts, extract_all_facts
 
 def load_articles(path):
     with open(path, "r") as f:
@@ -17,10 +17,13 @@ def run_article_pipeline():
     print_articles(articles)
 
 def run_fact_test():
-    text = "The sky is blue. It is sunny today. People are happy."
-    facts = extract_facts(text)
-    print("\nExtracted facts test:")
-    print(facts)
+    articles = load_articles("data/sample_articles.txt")
+    all_facts = extract_all_facts(articles)
+    print("\nExtracted facts per article:")
+    for i, facts in enumerate(all_facts, start=1):
+        print(f"\n--- Article {i} ---")
+        for fact in facts:
+            print(f"  - {fact}")
 
 def main():
     run_article_pipeline()
