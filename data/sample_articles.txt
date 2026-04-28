@@ -1,0 +1,5 @@
+Article 1:
+The sky is blue. It is sunny today.
+
+Article 2:
+The sky is blue. Today is a sunny day.
