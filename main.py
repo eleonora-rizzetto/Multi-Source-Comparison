@@ -12,9 +12,19 @@ def print_articles(articles):
     for i, article in enumerate(articles, start=1):
         print(f"\n--- Article {i} ---\n{article}")
 
-def main():
+def run_article_pipeline():
     articles = load_articles("data/sample_articles.txt")
     print_articles(articles)
+
+def run_fact_test():
+    text = "The sky is blue. It is sunny today. People are happy."
+    facts = extract_facts(text)
+    print("\nExtracted facts test:")
+    print(facts)
+
+def main():
+    run_article_pipeline()
+    run_fact_test()
 
 if __name__ == "__main__":
     main()

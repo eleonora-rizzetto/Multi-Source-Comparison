@@ -1,2 +1,6 @@
+import re
+
 def extract_facts(text):
-    return text.split(".")
+    sentences = re.split(r'[.!?]', text)
+    facts = [s.strip().lower() for s in sentences if s.strip()]
+    return facts
