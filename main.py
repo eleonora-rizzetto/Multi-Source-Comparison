@@ -4,7 +4,7 @@ def load_articles(path):
     with open(path, "r") as f:
         content = f.read()
 
-    articles = [a.strip() for a in content.split("Article") if a.strip()]
+    articles = [a.strip().split("\n", 1)[-1].strip() for a in content.split("Article") if a.strip()]
     return articles
 
 def print_articles(articles):
