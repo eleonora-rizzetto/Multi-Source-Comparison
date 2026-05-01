@@ -50,11 +50,18 @@ def test_llm_connection():
     print(response.choices[0].message.content)
 
 
+def save_report(report, event_name):
+    path = f"reports/{event_name}_report.md"
+    with open(path, "w") as f:
+        f.write(f"# Comparison Report — {event_name}\n\n")
+        f.write(report)
+    print(f"\nReport generated: {path}")
+
+
 def run_comparison():
     articles = load_articles("data/event1")
     report = compare_articles(articles, "event1", client)
-    print("\n" + report)
-    print("\nReport generated successfully.")
+    save_report(report, "event1")
 
 
 def main():
