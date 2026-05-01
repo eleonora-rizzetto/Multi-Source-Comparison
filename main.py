@@ -1,6 +1,12 @@
 import os
 
+from groq import Groq
+from dotenv import load_dotenv
+
 from extraction import extract_all_facts
+
+load_dotenv()
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 
 def load_articles(folder_path):
@@ -34,9 +40,19 @@ def run_fact_test():
             print(f"  - {fact}")
 
 
+def test_llm_connection():
+    response = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+        messages=[{"role": "user", "content": "Say hello in one sentence."}]
+    )
+    print("\nLLM connection test:")
+    print(response.choices[0].message.content)
+
+
 def main():
     run_article_pipeline()
     run_fact_test()
+    test_llm_connection()
 
 if __name__ == "__main__":
     main()
