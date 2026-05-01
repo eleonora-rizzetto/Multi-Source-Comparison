@@ -4,6 +4,7 @@ from groq import Groq
 from dotenv import load_dotenv
 
 from extraction import extract_all_facts
+from comparison import compare_articles
 
 load_dotenv()
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
@@ -49,10 +50,18 @@ def test_llm_connection():
     print(response.choices[0].message.content)
 
 
+def run_comparison():
+    articles = load_articles("data/event1")
+    report = compare_articles(articles, "event1", client)
+    print("\n" + report)
+    print("\nReport generated successfully.")
+
+
 def main():
     run_article_pipeline()
     run_fact_test()
     test_llm_connection()
+    run_comparison()
 
 if __name__ == "__main__":
     main()
