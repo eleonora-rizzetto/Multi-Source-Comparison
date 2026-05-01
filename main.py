@@ -1,6 +1,6 @@
 import os
 
-from extraction import extract_facts, extract_all_facts
+from extraction import extract_all_facts
 
 
 def load_articles(folder_path):
@@ -32,6 +32,7 @@ def run_fact_test():
         print(f"\n--- Article {i} ---")
         for fact in facts:
             print(f"  - {fact}")
+
 
 def main():
     run_article_pipeline()
