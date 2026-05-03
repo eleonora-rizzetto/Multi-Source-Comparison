@@ -58,17 +58,17 @@ def save_report(report, event_name):
     print(f"\nReport generated: {path}")
 
 
-def run_comparison():
-    articles = load_articles("data/event1")
-    report = compare_articles(articles, "event1", client)
-    save_report(report, "event1")
+def run_all_comparisons():
+    events = sorted([f for f in os.listdir("data") if os.path.isdir(os.path.join("data", f))])
+    for event in events:
+        print(f"\nProcessing {event}...")
+        articles = load_articles(f"data/{event}")
+        report = compare_articles(articles, event, client)
+        save_report(report, event)
 
 
 def main():
-    run_article_pipeline()
-    run_fact_test()
-    test_llm_connection()
-    run_comparison()
+    run_all_comparisons()
 
 if __name__ == "__main__":
     main()
