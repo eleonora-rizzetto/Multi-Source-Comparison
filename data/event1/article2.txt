@@ -1,1 +1,47 @@
-The sky is blue. Today is a sunny day.
+Key takeaways from Musk's testimony at OpenAI trial
+
+Elon Musk testified for more than seven hours over three days this week at a trial in Oakland, California, over the future of OpenAI, casting his lawsuit against the owner of ChatGPT as a defense of the institution of charitable giving.
+
+Musk, the CEO of Tesla and SpaceX as well as the world's richest person, is also suing OpenAI's Chief Executive Sam Altman and its President Greg Brockman, saying they betrayed him and the public by abandoning the mission to be a benevolent steward of AI for humanity.
+
+MUSK RECASTS OPENAI AS A 'CHARITY'
+
+The word "charity" doesn't appear once in the 2015 blog post announcing the formation of OpenAI as a nonprofit artificial intelligence research company. But Musk repeatedly described OpenAI as a charity and testified that Altman and Brockman reneged on an initial promise to keep the nonprofit model.
+
+"It was specifically meant to be for a charity that does not benefit any individual person. I could've started it as a for-profit and I specifically chose not to," Musk testified.
+
+MUSK SAYS OPENAI WOULDN'T EXIST WITHOUT HIM
+
+Building an AI research lab requires top-tier talent and considerable computing power. Musk said OpenAI relied on his connections for both.
+
+"I came up with the idea, the name, recruited the key people, taught them everything I know, provided all of the initial funding," Musk said.
+
+Musk said he recruited Ilya Sutskever, a top researcher, from Google while that company's founders Larry Page and Sergei Brin repeatedly tried to entice him to stay.
+
+"After I recruited Ilya to OpenAI, Larry Page refused to speak to me ever again," Musk testified.
+
+On computing power, Musk said that OpenAI relied on his connections with Microsoft CEO Satya Nadella and Nvidia CEO Jensen Huang. "The only one who could actually call Satya Nadella and have him pick up was me," Musk said. "The only reason he's in this thing is because of me. Those are his words."
+
+MUSK SPOKE ABOUT AI SAFETY
+
+Musk testified that he learned from discussions with Larry Page that the Google founder lacked concern about AI safety.
+
+"I said, 'What if AI wipes out all humans?' He said that would be fine so long as artificial intelligence survives. I said that was insane, that's just crazy. And then he called me a 'speciesist' because I care about humans more than AI. The reason OpenAI exists is because Larry Page called me a 'speciesist.' What would be the opposite of Google? An open-source nonprofit."
+
+'IT FELT LIKE A BRIBE'
+
+Musk said he asked Altman in late 2022 about an investment of $10 billion in OpenAI by Microsoft, which Musk described as a "bait and switch" in a text message shown to jurors.
+
+Altman responded, "I agree this feels bad." Altman then offered Musk an opportunity to buy stock in OpenAI, which Musk said "frankly, it felt like a bribe."
+
+MUSK, ON TRAINING HIS OWN AI COMPANY
+
+Musk was asked why he used OpenAI to train his xAI company if he considered OpenAI's model a danger. "It is standard practice to use other AIs to validate your AI," Musk said. Asked why his company was not structured as a charity, Musk testified, "For profit companies can be socially beneficial."
+
+'WE ALL COULD DIE'
+
+Musk's cross-examination by William Savitt, a lawyer for the OpenAI defendants, was tense at times. Musk accused Savitt of asking tricky and leading questions, which the judge said was permitted. Savitt was admonished for not allowing Musk to finish his thoughts. "Few answers are going to be complete especially when you cut me off all the time," Musk said.
+
+There was also pre-trial tension when Musk's lawyers wanted to be able to question an expert witness about extinction risk of AI, something OpenAI opposed. "Extinction risk is a real problem. This is a real risk. We all could die," said Musk's lawyer Steven Molo.
+
+The judge limited the scope of the expert's testimony and said that she thought "it's ironic that your client, despite these risks, is creating a company that's in the exact space."
