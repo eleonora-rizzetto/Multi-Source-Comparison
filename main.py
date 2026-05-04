@@ -3,7 +3,6 @@ import os
 from groq import Groq
 from dotenv import load_dotenv
 
-from extraction import extract_all_facts
 from comparison import compare_articles
 
 load_dotenv()
@@ -20,15 +19,6 @@ def load_articles(folder_path):
     return articles
 
 
-
-def run_fact_test():
-    articles = load_articles("data/event1")
-    all_facts = extract_all_facts(articles)
-    print("\nExtracted facts per article:")
-    for i, facts in enumerate(all_facts, start=1):
-        print(f"\n--- Article {i} ---")
-        for fact in facts:
-            print(f"  - {fact}")
 
 
 def test_llm_connection():
