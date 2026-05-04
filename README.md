@@ -9,3 +9,35 @@ Given a set of articles, the tool identifies:
 - **Summary** : a brief overall comparison
 
 Reports are generated using the Groq LLM API (llama-3.3-70b-versatile) and saved as Markdown files in the `reports/` folder.
+
+## Setup
+
+1. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+2. Create a `.env` file in the project root with your Groq API key:
+   ```
+   GROQ_API_KEY=your_api_key_here
+   ```
+
+## Usage
+
+Place article `.txt` files inside subfolders of `data/` (one folder per event):
+
+```
+data/
+  event1/
+    article1.txt
+    article2.txt
+    article3.txt
+```
+
+Then run:
+
+```
+python main.py
+```
+
+Reports will be saved in the `reports/` folder as Markdown files.
