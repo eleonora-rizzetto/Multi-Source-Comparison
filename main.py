@@ -21,14 +21,6 @@ def load_articles(folder_path):
 
 
 
-def test_llm_connection():
-    response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[{"role": "user", "content": "Say hello in one sentence."}]
-    )
-    print("\nLLM connection test:")
-    print(response.choices[0].message.content)
-
 
 def save_report(report, event_name):
     path = f"reports/{event_name}_report.md"
