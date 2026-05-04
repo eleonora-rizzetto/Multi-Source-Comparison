@@ -20,8 +20,6 @@ def load_articles(folder_path):
 
 
 
-
-
 def save_report(report, event_name):
     path = f"reports/{event_name}_report.md"
     with open(path, "w") as f:
@@ -41,6 +39,7 @@ def run_all_comparisons():
 
 def main():
     run_all_comparisons()
+
 
 if __name__ == "__main__":
     main()
