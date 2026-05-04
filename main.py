@@ -20,16 +20,6 @@ def load_articles(folder_path):
     return articles
 
 
-def print_articles(articles):
-    print("Loaded articles:")
-    for i, article in enumerate(articles, start=1):
-        print(f"\n--- Article {i} ---\n{article}")
-
-
-def run_article_pipeline():
-    articles = load_articles("data/event1")
-    print_articles(articles)
-
 
 def run_fact_test():
     articles = load_articles("data/event1")
