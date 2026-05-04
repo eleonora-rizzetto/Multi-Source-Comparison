@@ -53,7 +53,7 @@ def test_llm_connection():
 def save_report(report, event_name):
     path = f"reports/{event_name}_report.md"
     with open(path, "w") as f:
-        f.write(f"# Comparison Report — {event_name}\n\n")
+        f.write(f"# Comparison Report - {event_name}\n\n")
         f.write(report)
     print(f"\nReport generated: {path}")
 
