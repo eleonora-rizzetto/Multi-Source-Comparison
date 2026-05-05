@@ -4,7 +4,7 @@ from groq import Groq
 from dotenv import load_dotenv
 
 from comparison import compare_articles
-from utils import format_event_name
+from utils import format_event_name, count_articles
 
 load_dotenv()
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
@@ -24,7 +24,6 @@ def load_articles(folder_path):
     return articles
 
 
-
 def save_report(report, event_name):
     path = f"reports/{event_name}_report.md"
     with open(path, "w", encoding="utf-8") as f:
@@ -36,8 +35,8 @@ def save_report(report, event_name):
 def run_all_comparisons():
     events = sorted([f for f in os.listdir("data") if os.path.isdir(os.path.join("data", f))])
     for event in events:
-        print(f"\nProcessing {event}...")
         articles = load_articles(f"data/{event}")
+        print(f"\nProcessing {event} ({count_articles(articles)} articles)...")
         if not articles:
             print(f"No articles found in {event}, skipping.")
             continue

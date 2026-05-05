@@ -6,3 +6,7 @@ def format_event_name(event_folder_name):
         for part in parts
     )
     return formatted
+
+
+def count_articles(articles):
+    return len(articles)
