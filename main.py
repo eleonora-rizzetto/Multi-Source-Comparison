@@ -33,6 +33,9 @@ def run_all_comparisons():
     for event in events:
         print(f"\nProcessing {event}...")
         articles = load_articles(f"data/{event}")
+        if not articles:
+            print(f"No articles found in {event}, skipping.")
+            continue
         report = compare_articles(articles, event, client)
         save_report(report, event)
 
