@@ -4,6 +4,7 @@ from groq import Groq
 from dotenv import load_dotenv
 
 from comparison import compare_articles
+from utils import format_event_name
 
 load_dotenv()
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
@@ -27,7 +28,7 @@ def load_articles(folder_path):
 def save_report(report, event_name):
     path = f"reports/{event_name}_report.md"
     with open(path, "w", encoding="utf-8") as f:
-        f.write(f"# Comparison Report - {event_name}\n\n")
+        f.write(f"# Comparison Report - {format_event_name(event_name)}\n\n")
         f.write(report)
     print(f"\nReport generated: {path}")
 
