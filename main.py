@@ -14,7 +14,7 @@ def load_articles(folder_path):
     for filename in sorted(os.listdir(folder_path)):
         if filename.endswith(".txt"):
             filepath = os.path.join(folder_path, filename)
-            with open(filepath, "r") as f:
+            with open(filepath, "r", encoding="utf-8") as f:
                 articles.append(f.read().strip())
     return articles
 
@@ -22,7 +22,7 @@ def load_articles(folder_path):
 
 def save_report(report, event_name):
     path = f"reports/{event_name}_report.md"
-    with open(path, "w") as f:
+    with open(path, "w", encoding="utf-8") as f:
         f.write(f"# Comparison Report - {event_name}\n\n")
         f.write(report)
     print(f"\nReport generated: {path}")
