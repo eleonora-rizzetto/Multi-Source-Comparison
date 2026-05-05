@@ -15,7 +15,11 @@ def load_articles(folder_path):
         if filename.endswith(".txt"):
             filepath = os.path.join(folder_path, filename)
             with open(filepath, "r", encoding="utf-8") as f:
-                articles.append(f.read().strip())
+                content = f.read().strip()
+                if not content:
+                    print(f"Warning: {filename} is empty, skipping.")
+                    continue
+                articles.append(content)
     return articles
 
 
