@@ -10,6 +10,18 @@ Given a set of articles, the tool identifies:
 
 Reports are generated using the Groq LLM API (llama-3.3-70b-versatile) and saved as Markdown files in the `reports/` folder.
 
+## Project Structure
+
+```
+├── main.py          # Entry point, runs the full pipeline
+├── comparison.py    # LLM-based article comparison
+├── extraction.py    # Text normalization and fact extraction
+├── utils.py         # Utility functions
+├── data/            # Input articles, organized by event
+├── reports/         # Generated comparison reports
+└── tests/           # Unit tests
+```
+
 ## Setup
 
 1. Install dependencies:
