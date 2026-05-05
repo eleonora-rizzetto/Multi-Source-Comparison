@@ -36,10 +36,10 @@ def run_all_comparisons():
     events = sorted([f for f in os.listdir("data") if os.path.isdir(os.path.join("data", f))])
     for event in events:
         articles = load_articles(f"data/{event}")
-        print(f"\nProcessing {event} ({count_articles(articles)} articles)...")
         if not articles:
             print(f"No articles found in {event}, skipping.")
             continue
+        print(f"\nProcessing {event} ({count_articles(articles)} articles)...")
         report = compare_articles(articles, event, client)
         save_report(report, event)
 
