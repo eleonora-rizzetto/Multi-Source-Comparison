@@ -24,6 +24,17 @@ def load_articles(folder_path):
     return articles
 
 
+def print_quality_report(report, event_name):
+    shared = len(report.get("shared_facts", []))
+    contradictions = len(report.get("contradictions", []))
+    has_summary = bool(report.get("summary", "").strip())
+
+    print(f"\n--- Quality Report for {event_name} ---")
+    print(f"  Shared facts found:      {shared}")
+    print(f"  Contradictions found:    {contradictions}")
+    print(f"  Summary present:         {'yes' if has_summary else 'no'}")
+
+
 def save_report(report, event_name):
     path = f"reports/{event_name}_report.md"
     with open(path, "w", encoding="utf-8") as f:
@@ -41,6 +52,7 @@ def run_all_comparisons():
             continue
         print(f"\nProcessing {event} ({count_articles(articles)} articles)...")
         report = compare_articles(articles, event, client)
+        print_quality_report(report, event)
         save_report(report, event)
 
 
