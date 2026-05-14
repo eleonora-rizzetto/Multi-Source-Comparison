@@ -1,3 +1,6 @@
+import json
+
+
 def compare_articles(articles, event_name, client):
     prompt = f"Here are {len(articles)} articles about the same event: {event_name}.\n"
     prompt += "Analyze the articles and return a JSON object with exactly these four keys:\n\n"
@@ -16,4 +19,5 @@ def compare_articles(articles, event_name, client):
         messages=[{"role": "user", "content": prompt}]
     )
 
-    return response.choices[0].message.content
+    raw = response.choices[0].message.content
+    return json.loads(raw)
