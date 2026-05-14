@@ -1,11 +1,11 @@
 def compare_articles(articles, event_name, client):
     prompt = f"Here are {len(articles)} articles about the same event: {event_name}.\n"
-    prompt += "Identify the main topic discussed in these articles and highlight:\n\n"
-    prompt += "1. the shared facts present in all the articles\n"
-    prompt += "2. the unique facts which appear only in some of them - state which article each comes from\n"
-    prompt += "3. the contradictions between different articles\n\n"
-    prompt += "Structure your response with these exact sections:\n"
-    prompt += "SHARED FACTS, UNIQUE FACTS, CONTRADICTIONS, SUMMARY.\n\n"
+    prompt += "Analyze the articles and return a JSON object with exactly these four keys:\n\n"
+    prompt += '- "shared_facts": a list of strings, each being a fact present in all articles\n'
+    prompt += '- "unique_facts": a dict mapping each article identifier (e.g. "Article 1") to a list of strings, each being a fact unique to that article\n'
+    prompt += '- "contradictions": a list of strings, each describing a contradiction between articles\n'
+    prompt += '- "summary": a single string summarizing the overall comparison\n\n'
+    prompt += "Return only the JSON object, no extra text, no markdown formatting.\n\n"
     prompt += "Here are the articles:\n\n"
 
     for i, article in enumerate(articles, start=1):
