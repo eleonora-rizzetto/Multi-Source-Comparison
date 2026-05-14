@@ -39,7 +39,25 @@ def save_report(report, event_name):
     path = f"reports/{event_name}_report.md"
     with open(path, "w", encoding="utf-8") as f:
         f.write(f"# Comparison Report - {format_event_name(event_name)}\n\n")
-        f.write(report)
+
+        f.write("## Shared Facts\n\n")
+        for fact in report.get("shared_facts", []):
+            f.write(f"- {fact}\n")
+
+        f.write("\n## Unique Facts\n\n")
+        for article, facts in report.get("unique_facts", {}).items():
+            f.write(f"**{article}**\n")
+            for fact in facts:
+                f.write(f"- {fact}\n")
+            f.write("\n")
+
+        f.write("## Contradictions\n\n")
+        for contradiction in report.get("contradictions", []):
+            f.write(f"- {contradiction}\n")
+
+        f.write("\n## Summary\n\n")
+        f.write(report.get("summary", "") + "\n")
+
     print(f"\nReport generated: {path}")
 
 
