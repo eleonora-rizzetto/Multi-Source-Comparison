@@ -8,14 +8,14 @@ Given a set of articles, the tool identifies:
 - **Contradictions** : claims that conflict between sources
 - **Summary** : a brief overall comparison
 
-Reports are generated using the Groq LLM API (llama-3.3-70b-versatile) and saved as Markdown files in the `reports/` folder.
+Articles are sent to the Groq LLM API (llama-3.3-70b-versatile), which returns a structured JSON response. The JSON is parsed and converted into a clean Markdown report saved in the `reports/` folder. A quality summary is also printed to the terminal after each event is processed.
 
 ## Project Structure
 
 ```
 ├── main.py          # Entry point, runs the full pipeline
 ├── comparison.py    # LLM-based article comparison
-├── extraction.py    # Text normalization and fact extraction
+├── extraction.py    # Text normalisation and fact extraction
 ├── utils.py         # Utility functions
 ├── data/            # Input articles, organized by event
 ├── reports/         # Generated comparison reports
