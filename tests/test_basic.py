@@ -1,20 +1,20 @@
-from extraction import normalize_text, extract_facts, extract_all_facts
+from extraction import normalise_text, extract_facts, extract_all_facts
 
 
-def test_normalize_text_lowercases():
-    assert normalize_text("Hello World") == "hello world"
+def test_normalise_text_lowercases():
+    assert normalise_text("Hello World") == "hello world"
 
 
-def test_normalize_text_removes_punctuation():
-    assert normalize_text("Hello, World!") == "hello world"
+def test_normalise_text_removes_punctuation():
+    assert normalise_text("Hello, World!") == "hello world"
 
 
-def test_normalize_text_collapses_spaces():
-    assert normalize_text("hello   world") == "hello world"
+def test_normalise_text_collapses_spaces():
+    assert normalise_text("hello   world") == "hello world"
 
 
-def test_normalize_text_strips_whitespace():
-    assert normalize_text("  hello  ") == "hello"
+def test_normalise_text_strips_whitespace():
+    assert normalise_text("  hello  ") == "hello"
 
 
 def test_extract_facts_splits_on_period():
@@ -32,7 +32,7 @@ def test_extract_facts_ignores_empty_sentences():
     assert all(f != "" for f in facts)
 
 
-def test_extract_facts_returns_normalized_text():
+def test_extract_facts_returns_normalised_text():
     facts = extract_facts("The Sky Is BLUE.")
     assert facts[0] == "the sky is blue"
 

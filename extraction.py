@@ -1,7 +1,7 @@
 import re
 
 
-def normalize_text(text):
+def normalise_text(text):
     text = text.lower()
     text = re.sub(r"[^\w\s]", "", text)
     text = re.sub(r"\s+", " ", text)
@@ -13,7 +13,7 @@ def extract_facts(text):
 
     facts = []
     for s in sentences:
-        s = normalize_text(s)
+        s = normalise_text(s)
         if s:
             facts.append(s)
 
